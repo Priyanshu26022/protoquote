@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE – BookVault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --ink: #1a1a2e; --cream: #f5f0e8; --gold: #c9a84c; --border: #d4c5a0; }
+        body { background: white; font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+        .dept-header { background: linear-gradient(135deg, #1a2e2a 0%, #2d4e3a 100%); padding: 2rem 2.5rem 1.5rem; position: relative; overflow: hidden; }
+        .dept-header::after { content: '📡'; position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); font-size: 5rem; opacity: 0.08; }
+        .dept-tag { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 0.4rem; }
+        .dept-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: white; line-height: 1.1; }
+        .dept-subtitle { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-top: 0.3rem; }
+        .content { padding: 2rem 2.5rem; }
+        .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 1rem; }
+        .book-select-wrapper { position: relative; margin-bottom: 1.5rem; }
+        .book-select-wrapper::after { content: '▾'; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--gold); pointer-events: none; }
+        select { width: 100%; padding: 0.9rem 2.5rem 0.9rem 1rem; border: 1.5px solid var(--border); border-radius: 3px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--ink); background: var(--cream); appearance: none; outline: none; cursor: pointer; transition: border-color 0.2s; }
+        select:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+        .qty-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .qty-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; white-space: nowrap; }
+        .qty-controls { display: flex; align-items: center; border: 1.5px solid var(--border); border-radius: 3px; overflow: hidden; }
+        .qty-btn { width: 36px; height: 36px; border: none; background: var(--cream); font-size: 1.1rem; cursor: pointer; transition: background 0.15s; }
+        .qty-btn:hover { background: #e8d5a0; }
+        .qty-input { width: 52px; height: 36px; border: none; border-left: 1.5px solid var(--border); border-right: 1.5px solid var(--border); text-align: center; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--ink); background: white; outline: none; }
+        .price-note { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2); border-radius: 3px; padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 0.82rem; color: #666; }
+        .btn-cart { display: block; padding: 0.95rem; background: var(--ink); color: var(--gold); text-decoration: none; border-radius: 3px; font-size: 0.85rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; transition: background 0.2s; }
+        .btn-cart:hover { background: #2d2d4e; }
+        .divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+        .books-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .book-card { padding: 0.9rem; background: var(--cream); border: 1px solid var(--border); border-radius: 3px; font-size: 0.82rem; color: #555; display: flex; align-items: flex-start; gap: 0.5rem; }
+        .book-num { color: var(--gold); font-weight: 700; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <div class="dept-header">
+        <div class="dept-tag">Department</div>
+        <h1 class="dept-title">Electronics &amp; Communication<br>Engineering</h1>
+        <div class="dept-subtitle">4 textbooks available</div>
+    </div>
+    <div class="content">
+        <p class="section-label">Available Textbooks</p>
+        <div class="books-grid">
+            <div class="book-card"><span class="book-num">01</span> Colour Coding</div>
+            <div class="book-card"><span class="book-num">02</span> OPM</div>
+            <div class="book-card"><span class="book-num">03</span> All About ECE</div>
+            <div class="book-card"><span class="book-num">04</span> Transistors</div>
+        </div>
+        <hr class="divider">
+        <p class="section-label">Place Your Order</p>
+        <div class="book-select-wrapper">
+            <select>
+                <option value="">— Select a textbook —</option>
+                <option>Colour Coding</option>
+                <option>OPM</option>
+                <option>All About ECE</option>
+                <option>Transistors</option>
+            </select>
+        </div>
+        <div class="qty-row">
+            <span class="qty-label">Quantity</span>
+            <div class="qty-controls">
+                <button class="qty-btn" onclick="if(+q.value>1)q.value=+q.value-1">−</button>
+                <input class="qty-input" type="number" id="q" value="1" min="1">
+                <button class="qty-btn" onclick="q.value=+q.value+1">+</button>
+            </div>
+        </div>
+        <div class="price-note">📦 Free delivery on campus orders above ₹500</div>
+        <a href="added_to_cart.html" class="btn-cart">Add to Cart</a>
+    </div>
+</body>
+</html>
