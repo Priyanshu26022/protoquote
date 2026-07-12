@@ -11,16 +11,35 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Services />
-      <HowItWorks />
+
+      <section id="home">
+        <Hero />
+      </section>
+
+      <section id="services">
+        <Services />
+      </section>
+
+      <section id="how-it-works">
+        <HowItWorks />
+      </section>
+
       <Features />
-      <QuoteCalculator />
-      <Uploads />
-      <Footer />
+
+      
+      <section id="upload">
+        <Uploads />
+      </section>
+
+      <section id="quote">
+        <QuoteCalculator />
+      </section>
+
+      <section id="contact">
+        <Footer />
+      </section>
     </>
   );
 }
-
 
 export default Home;

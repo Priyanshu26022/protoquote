@@ -24,20 +24,14 @@ def get_db():
 
 app = FastAPI(title="ProtoQuote API")
 
-
-# ---------------- CORS ----------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://protoquote.vercel.app",
-        "https://protoquote-67rlr8ssa-priyanshu26022s-projects.vercel.app",
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# --------------------------------------
+
 
 
 UPLOAD_FOLDER = "uploads"

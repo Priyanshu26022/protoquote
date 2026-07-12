@@ -43,14 +43,24 @@ useEffect(() => {
     return (
      
             <section className="bg-slate-950 py-24 text-white">
-  <div className="mx-auto max-w-3xl rounded-2xl border border-slate-700 bg-slate-900 p-8">
+  <div className="mx-auto max-w-6xl rounded-3xl border border-slate-700 bg-slate-900 p-10 shadow-2xl">
 
-    <h2 className="mb-8 text-center text-4xl font-bold">
-      Manufacturing Quote Calculator
-    </h2>
+   <div className="mb-10 text-center">
 
-    <div className="space-y-6">
+  <h2 className="text-5xl font-bold">
+    Instant Manufacturing Quote
+  </h2>
 
+  <p className="mt-4 text-slate-400">
+    Select your manufacturing requirements to receive an AI-powered cost estimate and lead time.
+  </p>
+
+</div>
+
+    <div className="grid gap-10 lg:grid-cols-2">
+
+  
+     <div className="space-y-6">
     
       <div>
         <label className="mb-2 block">Material</label>
@@ -74,8 +84,6 @@ useEffect(() => {
           value={process}
           onChange={(e) => setProcess(e.target.value)}
           className="w-full rounded-lg bg-slate-800 p-3"
-
-          className="w-full rounded-lg bg-slate-800 p-3"
         >
           <option>CNC</option>
           <option>3D Printing</option>
@@ -95,7 +103,7 @@ useEffect(() => {
       </div>
 
       
-      <div>
+            <div>
         <label className="mb-2 block">Tolerance</label>
 
         <select
@@ -109,7 +117,17 @@ useEffect(() => {
         </select>
       </div>
 
-      <div className="mt-8 rounded-xl bg-slate-800 p-6 space-y-4">
+      <button
+        onClick={generateQuote}
+        className="w-full rounded-xl bg-blue-500 py-3 font-semibold transition hover:bg-blue-400"
+      >
+        Generate Quote
+      </button>
+
+      </div>
+
+    
+      <div className="rounded-2xl border border-blue-500/30 bg-slate-800 p-8 shadow-xl space-y-5">
 
     <h3 className="text-2xl font-bold">
         Quote Summary
@@ -144,11 +162,12 @@ useEffect(() => {
         </span>
     </div>
 
-</div>
-
     </div>
 
   </div>
+
+</div>
+
 </section>
 
       
