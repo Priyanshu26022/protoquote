@@ -25,7 +25,8 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section className="bg-slate-900 py-24 text-white">
+    <section id="how-it-works"
+     className="bg-slate-900 py-24 text-white">
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="mb-4 text-center text-5xl font-bold">
           How It Works

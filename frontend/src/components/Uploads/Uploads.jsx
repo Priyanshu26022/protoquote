@@ -28,7 +28,8 @@ function Uploads() {
   };
 
   return (
-    <section className="bg-slate-950 py-24 text-white">
+    <section  id="upload" 
+    className="bg-slate-950 py-24 text-white">
       <div className="mx-auto max-w-3xl rounded-2xl border border-slate-700 bg-slate-900 p-10">
         
         <h2 className="mb-6 text-center text-4xl font-bold">

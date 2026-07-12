@@ -30,7 +30,8 @@ const services = [
 
 function Services() {
   return (
-    <section className="bg-slate-950 py-24 text-white">
+    <section id="services"
+     className="bg-slate-950 py-24 text-white">
 
       <div className="mx-auto max-w-7xl px-6">
 

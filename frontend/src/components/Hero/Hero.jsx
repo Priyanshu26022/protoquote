@@ -1,6 +1,8 @@
 function Hero() {
   return (
-    <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+    <section 
+     id="home"
+     className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
 
       <div className="mx-auto flex max-w-7xl flex-col items-center px-6 py-28 text-center">
 
@@ -20,13 +22,27 @@ function Hero() {
         </p>
 
         <div className="mt-10 flex gap-5">
-          <button className="rounded-xl bg-blue-600 px-8 py-4 font-semibold transition hover:bg-blue-500">
-            Get Quote
-          </button>
+        <button
+         onClick={() =>
+         document
+         .getElementById("quote-calculator")
+         ?.scrollIntoView({ behavior: "smooth" })
+        }
+         className="rounded-xl bg-blue-500 px-8 py-4 font-semibold text-white transition hover:bg-blue-400"
+         >
+         Get Quote
+        </button>
 
-          <button className="rounded-xl border border-slate-600 px-8 py-4 transition hover:border-blue-500">
-            Learn More
-          </button>
+         <button
+             onClick={() =>
+             document.getElementById("how-it-works")?.scrollIntoView({
+           behavior: "smooth",
+            })
+          }
+         className="rounded-xl border border-slate-600 px-8 py-4 text-lg font-semibold text-white hover:bg-slate-800"
+        >
+          Learn More
+        </button>
         </div>
 
       </div>

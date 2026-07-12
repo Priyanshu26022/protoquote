@@ -42,7 +42,9 @@ useEffect(() => {
 
     return (
      
-            <section className="bg-slate-950 py-24 text-white">
+            <section 
+            id="quote-calculator"
+            className="bg-slate-950 py-24 text-white">
   <div className="mx-auto max-w-6xl rounded-3xl border border-slate-700 bg-slate-900 p-10 shadow-2xl">
 
    <div className="mb-10 text-center">
@@ -116,13 +118,6 @@ useEffect(() => {
           <option>High</option>
         </select>
       </div>
-
-      <button
-        onClick={generateQuote}
-        className="w-full rounded-xl bg-blue-500 py-3 font-semibold transition hover:bg-blue-400"
-      >
-        Generate Quote
-      </button>
 
       </div>
 
