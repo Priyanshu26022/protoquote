@@ -46,7 +46,7 @@ protoquote/
 ## Live Demo
 
 Frontend:
-https://YOUR-VERCEL-LINK
+https://protoquote.vercel.app/
 
 Backend API:
 https://protoquote-backend.onrender.com
